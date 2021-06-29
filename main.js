@@ -1,5 +1,5 @@
 // select pg-container and img
-// const $pg = document.querySelector('.pg-container');
+/* const $pg = document.querySelector('.pg-container');
 const $car = document.querySelector('.car-img');
 let rotation = 0;
 
@@ -18,7 +18,7 @@ const turnCW = function () {
     rotate(rotation, offset);
   }
 };
-turnCW();
+
 const turnCCW = function () {
   const offset = -90;
   if (rotation === 0) {
@@ -28,5 +28,9 @@ const turnCCW = function () {
     rotate(rotation, offset);
   }
 };
-turnCCW();
+
 // add event listener to pg: target img, event: keydown(down-arrow), function
+// $pg.addEventListener("keydown", function(e){
+//  if (event.target === )
+// });
+*/
