@@ -3,6 +3,7 @@ body {
 }
 
 .car-img {
-  position: absolute;
+  position: relative;
   width: 7rem;
+  transform: rotate(0deg);
 }
