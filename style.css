@@ -1,0 +1,8 @@
+body {
+  background-color: rgba(61, 16, 13, 0.404);
+}
+
+.car-img {
+  position: absolute;
+  width: 7rem;
+}
