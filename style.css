@@ -2,8 +2,25 @@ body {
   background-color: rgba(61, 16, 13, 0.404);
 }
 
-.car-img {
+.rotate0 {
   position: relative;
   width: 7rem;
-  transform: rotate(0deg);
+}
+
+.rotate90 {
+  position: relative;
+  width: 7rem;
+  transform: rotate(90deg);
+}
+
+.rotate180 {
+  position: relative;
+  width: 7rem;
+  transform: rotate(180deg);
+}
+
+.rotate270 {
+  position: relative;
+  width: 7rem;
+  transform: rotate(270deg);
 }
