@@ -43,7 +43,38 @@ const turnCCW = function () {
     carro.rotation -= offset;
   }
 };
+/*
+// functions that incriment carro.x & .y and set intervals
+function plusX() {
+  carro.x += 10;
+  setInterval(function () {
+    $car.style.left = (carro.x + 'px');
+  }, 16);
+}
+function minusX() {
+  carro.x -= 10;
+  setInterval(function () {
+    $car.style.left = (carro.x + 'px');
+  }, 16);
+}
+function plusY() {
+  carro.y += 10;
+  setInterval(function () {
+    $car.style.up = (carro.y + 'px');
+  }, 16);
+}
+function minusY() {
+  carro.y -= 10;
+  setInterval(function () {
+    $car.style.up = (carro.y + 'px');
+  }, 16);
+}
 
+// function that clears interval
+function clear() {
+  clearInterval(int);
+}
+*/
 // add event listener to pg: target img, event: keydown(down-arrow), function
 document.addEventListener('keydown', function (e) {
   if ((event.code === 'ArrowRight') || (event.code === 'ArrowLeft')) {
