@@ -1,6 +1,6 @@
 // set carro object
 const carro = {
-  rotation: null,
+  rotation: 0,
   x: null,
   y: null,
   moving: 0
