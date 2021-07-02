@@ -1,6 +1,8 @@
 // select pg-container and img
 const $car = document.querySelector('#car');
 let rotation = 0;
+let x = 0;
+// const y = 0;
 const offset = 90;
 
 // make turning functions: L(-90deg), R (+90deg)
@@ -44,5 +46,15 @@ document.addEventListener('keydown', function (e) {
     } else {
       turnCW();
     }
+  }
+});
+
+// add eventlistener to listen for space bar and start interval
+document.addEventListener('keydown', function (e) {
+  if (event.code === 'Space') {
+    setInterval(function () {
+      x += 10;
+      $car.style.left = (x + 'px');
+    }, 16);
   }
 });
