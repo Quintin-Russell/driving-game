@@ -13,27 +13,27 @@ const offset = 90;
 
 // functions that incriment carro.x & .y and set intervals
 function plusX() {
-  carro.x += 10;
   int = setInterval(function () {
+    carro.x += 10;
     $car.style.left = (carro.x + 'px');
   }, 16);
 }
 function minusX() {
-  carro.x -= 10;
   int = setInterval(function () {
+    carro.x -= 10;
     $car.style.left = (carro.x + 'px');
   }, 16);
 }
 function plusY() {
-  carro.y += 10;
   int = setInterval(function () {
-    $car.style.up = (carro.y + 'px');
+    carro.y -= 10;
+    $car.style.top = (carro.y + 'px');
   }, 16);
 }
 function minusY() {
-  carro.y -= 10;
   int = setInterval(function () {
-    $car.style.up = (carro.y + 'px');
+    carro.y += 10;
+    $car.style.top = (carro.y + 'px');
   }, 16);
 }
 
@@ -42,28 +42,37 @@ function clear() {
   clearInterval(int);
 }
 
+function motion() {
+  clear();
+  if (carro.rotation === 0) {
+    plusX();
+  } else if (carro.rotation === 90) {
+    minusY();
+  } else if (carro.rotation === 180) {
+    minusX();
+  } else {
+    plusY();
+  }
+}
+
 // make turning functions: L(-90deg), R (+90deg)
 const turnCW = function () {
   if (carro.rotation === 0) {
     $car.setAttribute('class', 'rotate90');
     carro.rotation += offset;
-    clear();
-    minusY();
+    motion();
   } else if (carro.rotation === 90) {
     $car.setAttribute('class', 'rotate180');
     carro.rotation += offset;
-    clear();
-    minusX();
+    motion();
   } else if (carro.rotation === 180) {
     $car.setAttribute('class', 'rotate270');
     carro.rotation += offset;
-    clear();
-    plusY();
+    motion();
   } else if (carro.rotation === 270) {
     $car.setAttribute('class', 'rotate0');
     carro.rotation = 0;
-    clear();
-    plusX();
+    motion();
   }
 };
 
@@ -71,23 +80,19 @@ const turnCCW = function () {
   if (carro.rotation === 0) {
     $car.setAttribute('class', 'rotate270');
     carro.rotation = 270;
-    clear();
-    plusY();
+    motion();
   } else if (carro.rotation === 90) {
     $car.setAttribute('class', 'rotate0');
     carro.rotation -= offset;
-    clear();
-    plusX();
+    motion();
   } else if (carro.rotation === 180) {
     $car.setAttribute('class', 'rotate90');
     carro.rotation -= offset;
-    clear();
-    minusY();
+    motion();
   } else if (carro.rotation === 270) {
     $car.setAttribute('class', 'rotate180');
     carro.rotation -= offset;
-    clear();
-    minusX();
+    motion();
   }
 };
 
@@ -108,7 +113,8 @@ document.addEventListener('keydown', function (e) {
 document.addEventListener('keydown', function (e) {
   if (event.code === 'Space') {
     if (carro.moving === 0) {
-      plusX();
+      carro.moving = 1;
+      motion();
     } else {
       carro.moving = 0;
       clear();
