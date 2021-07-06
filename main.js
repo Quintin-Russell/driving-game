@@ -6,8 +6,6 @@ const carro = {
   moving: 0
 };
 let int;
-
-// select pg-container and img
 const $car = document.querySelector('#car');
 const offset = 90;
 
